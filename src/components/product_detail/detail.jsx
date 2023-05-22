@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import styles from "./detail.module.css";
 import { getProducts } from "../../service/fetcher";
 
-export const Detail = ({ convertPrice }) => {
+export const Detail = ({ convertPrice, cart, setCart }) => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [count, setCount] = useState(1);
@@ -23,7 +23,40 @@ export const Detail = ({ convertPrice }) => {
     });
   }, [id]);
 
-  console.log(product);
+  // 장바구니 중복된 물건 확인
+  const setQuantity = (id, quantity) => {
+    const found = cart.filter((el) => el.id === id)[0]; //중복값은 하나만 들어오니까
+    const idx = cart.indexOf(found);
+    const cartItem = {
+      //불러들일 정보
+      id: product.id,
+      image: product.image,
+      name: product.name,
+      price: product.price,
+      provider: product.provider,
+      quantity: quantity, //매개변수의 quantity
+    };
+    setCart([...cart.slice(0, idx), cartItem, ...cart.slice(idx + 1)]);
+  };
+
+  const handleCart = () => {
+    //선택한 물품이 장바구니 안에 들어가도록
+    const cartItem = {
+      //불러들일 정보
+      id: product.id,
+      image: product.image,
+      name: product.name,
+      price: product.price,
+      provider: product.provider,
+      quantity: count,
+    };
+    const found = cart.find((el) => el.id === cartItem.id); //카트의 값들 중에서 중복된 물건이 있는지
+
+    if (found) setQuantity(cartItem.id, found.quantity + count);
+    else setCart([...cart, cartItem]); //스프레드로 cart안에 여러개의 정보를 담을 수 있도록
+  };
+
+  console.log(cart);
 
   return (
     product && ( //프로덕트가 들어와야 아래 코드가 렌더링되도록
@@ -82,7 +115,9 @@ export const Detail = ({ convertPrice }) => {
 
             <div className={styles.btn}>
               <button className={styles.btn_buy}>바로 구매</button>
-              <button className={styles.btn_cart}>장바구니</button>
+              <button className={styles.btn_cart} onClick={() => handleCart()}>
+                장바구니
+              </button>
             </div>
           </section>
         </main>
