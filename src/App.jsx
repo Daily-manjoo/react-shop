@@ -15,11 +15,11 @@ function App() {
   };
   return (
     <BrowserRouter>
-      <TopNavigationBar />
+      <TopNavigationBar cart={cart} />
       <Routes>
         <Route path="/" element={<Home products={products} setProducts={setProducts} convertPrice={convertPrice} />} />
         <Route path="/product/:id" element={<Product convertPrice={convertPrice} cart={cart} setCart={setCart} />} />
-        <Route path="/cart" element={<Basket />} />
+        <Route path="/cart" element={<Basket cart={cart} setCart={setCart} convertPrice={convertPrice} />} />
       </Routes>
     </BrowserRouter>
   );
