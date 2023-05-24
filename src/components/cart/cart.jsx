@@ -3,7 +3,7 @@ import { CartHeader } from "./cartHeader";
 import { CartList } from "./cartList";
 import { TotalCart } from "./totalCart";
 
-export const Cart = ({ cart, setCart, convertPrice }) => {
+export const Cart = ({ cart, setCart, convertPrice, checkLists, setCheckLists }) => {
   const handleQuantity = (type, id, quantity) => {
     //수량조절, 변수: type= +,- 증가 감소
     const found = cart.filter((el) => el.id === id)[0];
@@ -27,6 +27,16 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
     //장바구니 물품 삭제
     setCart(cart.filter((el) => el.id !== id));
   };
+
+  const handleCheckList = (checked, id) => {
+    //체크리스트에 id값을 부여하고 체크된것만 리스트에 넣기
+    if (checked) {
+      setCheckLists([...checkLists, id]);
+    } else {
+      setCheckLists(checkLists.map((check) => check !== id));
+    }
+  };
+  console.log(checkLists);
   return (
     <>
       <header className={styles.header}>
@@ -48,6 +58,8 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
               convertPrice={convertPrice}
               handleQuantity={handleQuantity}
               handleRemove={handleRemove}
+              handleCheckList={handleCheckList}
+              checkLists={checkLists}
             />
           );
         })

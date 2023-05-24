@@ -2,58 +2,58 @@
   "products": [
     {
       "id": 1,
-      "name": "마로네 노트북 파우치",
-      "provider": "아이돈케어",
-      "price": 17100,
+      "name": "먹으면 개발자가 되는 사과",
+      "provider": "애플페이",
+      "price": 1000000,
       "image": "/images/image001.png"
     },
     {
       "id": 2,
-      "name": "에어팟 키링",
-      "provider": "gorigory",
-      "price": 3000,
+      "name": "김영민 강사님처럼 코딩할 수 있는 노트북",
+      "provider": "불가능",
+      "price": 9999999,
       "image": "/images/image002.png"
     },
     {
       "id": 3,
-      "name": "폴리폴리 무릎 담요",
-      "provider": "100-QM",
-      "price": 7000,
+      "name": "오류를 찾을 수 있는 감각",
+      "provider": "찾기전에 잡아먹힘",
+      "price": 1000,
       "image": "/images/image003.png"
     },
     {
       "id": 4,
-      "name": "아이폰 스티커 팩",
-      "provider": "문구 판매소",
-      "price": 1900,
+      "name": "코드를 바라보는 내 표정",
+      "provider": "하찮음",
+      "price": 500,
       "image": "/images/image004.png"
     },
     {
       "id": 5,
-      "name": "개발자 키보드",
-      "provider": "numpy",
-      "price": 99000,
+      "name": "그냥 사과",
+      "provider": "사과",
+      "price": 1000,
       "image": "/images/image005.png"
     },
     {
       "id": 6,
-      "name": "개발자 커스텀 케이블",
-      "provider": "보물보따리",
-      "price": 69000,
+      "name": "그냥 노트북",
+      "provider": "가전",
+      "price": 100000,
       "image": "/images/image006.png"
     },
     {
       "id": 7,
-      "name": "문 긁는 고양이",
-      "provider": "집",
+      "name": "샥스핀",
+      "provider": "애완동물",
       "price": 1000000,
       "image": "/images/image007.png"
     },
     {
       "id": 8,
-      "name": "우당탕탕 인테리어 책",
-      "provider": "우당탕탕",
-      "price": 5900,
+      "name": "미래의 나",
+      "provider": "직업은 있을까",
+      "price": 777,
       "image": "/images/image008.png"
     }
   ]

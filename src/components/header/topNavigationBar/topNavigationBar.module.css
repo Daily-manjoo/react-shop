@@ -87,8 +87,8 @@
 
 .shopping_cart .new_shopping_cart p {
   position: relative;
-  top: 50%;
-  left: 45%;
+  top: 40%;
+  left: 40%;
   transform: translate(-10%, -45%);
   background: transparent;
   font-size: 12px;
